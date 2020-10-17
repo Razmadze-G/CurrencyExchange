@@ -89,13 +89,14 @@
         android:layout_width="250dp"
         android:layout_height="40dp"
         android:layout_gravity="center"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="20dp"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="40dp"
         android:layout_marginRight="20dp"
-        android:hint="@string/result"
+        android:layout_marginBottom="20dp"
         android:enabled="false"
-        android:autofillHints="" />
+        android:textColor="@color/success"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/button"
@@ -106,9 +107,7 @@
         android:background="@drawable/custom_button"
         android:text="@string/convert"
         android:textColor="@android:color/white"
+        android:onClick="onConvert"
         android:layout_gravity="center_horizontal" />
-
-
-
 
 </LinearLayout>

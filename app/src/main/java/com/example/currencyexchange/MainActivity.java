@@ -75,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
                 double rate = Double.parseDouble(tds.get(2).text()) / multiplier;
                 currencies.put(currency, rate);
             }
+            currencies.put("GEL", 1.0);
         } catch (IOException e) {
             e.printStackTrace();
         } catch (Exception e) {

@@ -3,15 +3,19 @@ package com.razmadze.currencyexchange
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.R.layout.*
 import com.razmadze.currencyexchange.models.AllData
 import com.razmadze.currencyexchange.models.Currency
+import java.math.RoundingMode
+import java.text.DecimalFormat
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
     private val strURL: String= "https://nbg.gov.ge/gw/api/ct/monetarypolicy/currencies/ka/json"
 
     private val jsonHelper = JSONHelper()
     private var allData: AllData? = null
-    val currencyCodes: MutableList<String> = mutableListOf()
+    private val currencyCodes: MutableMap<String, Double> = TreeMap()
 
     private lateinit var currencyToBeConverted: EditText
     private lateinit var convertTo: Spinner
@@ -38,13 +42,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun fillSpinnerWithListOfCodes(allData:AllData?){
         val currencyList: List<Currency> = allData?.currencies ?: listOf()
+
+        currencyCodes["GEL"] = 1.0
         for(currency in currencyList) {
-            currencyCodes.add(currency.code)
+            currencyCodes[currency.code] = (currency.rate / currency.quantity)
         }
-//        for(cur in currencyCodes) {
-//            print("$cur - ")
-//        }
-        val adapter = ArrayAdapter(this, com.google.android.material.R.layout.support_simple_spinner_dropdown_item, currencyCodes)
+
+        val adapter = ArrayAdapter (this, support_simple_spinner_dropdown_item, currencyCodes.keys.toList())
         convertFrom.adapter = adapter
         convertTo.adapter = adapter
     }
@@ -58,5 +62,13 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "Sorry, data about currencies are not present. Please try it later.", Toast.LENGTH_LONG).show()
             return
         }
+        val inputValue = currencyToBeConverted.text.toString().toDouble()
+        val selectedTo = currencyCodes[convertTo.selectedItem.toString()]
+        val selectedFrom = currencyCodes[convertFrom.selectedItem.toString()]
+        val resultValue = inputValue * selectedFrom!! / selectedTo!!
+        val df = DecimalFormat("#.###")
+        df.roundingMode = RoundingMode.CEILING
+        val result = "Result: ${df.format(resultValue)}"
+        currencyConverted.text = result
     }
 }

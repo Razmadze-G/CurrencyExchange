@@ -19,7 +19,7 @@ class JSONHelper {
             .build()
 
         val countDownLatch = CountDownLatch(1)
-        val response = client.newCall(request).enqueue(object : Callback {
+        client.newCall(request).enqueue(object : Callback {
             override fun onResponse(call: Call, response: Response) {
                 if (response.isSuccessful) {
                     Log.e("INFO", "onResponse is successful")
@@ -30,14 +30,14 @@ class JSONHelper {
                         Log.e("ERROR", exc.message.toString())
                     }
                 }
-                countDownLatch.countDown();
+                countDownLatch.countDown()
             }
             override fun onFailure(call: Call, e: IOException) {
                 Log.e("INFO", "failure happened while getting request.")
-                countDownLatch.countDown();
+                countDownLatch.countDown()
             }
         })
-        countDownLatch.await();
+        countDownLatch.await()
         return allData
     }
 }

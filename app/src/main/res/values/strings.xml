@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Currency Exchange</string>
+    <string name="currency_converter">Converter</string>
+    <string name="currency_to_be_converted">Currency to be converted</string>
+    <string name="convert">Convert</string>
+    <string name="to_currency">To:</string>
+    <string name="result">Result</string>
+    <string name="from_currency">From:</string>
+    <string name="Enter">Enter amount</string>
+    <string name="result_first_text">Result: </string>
+</resources>

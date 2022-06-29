@@ -2,7 +2,6 @@ package com.razmadze.currencyexchange
 
 import android.app.AlertDialog
 import android.content.Context
-import android.content.DialogInterface
 import android.net.ConnectivityManager
 import android.os.Bundle
 import android.view.Window
@@ -131,8 +130,8 @@ class MainActivity : AppCompatActivity() {
             .setMessage("No network connection. Do you want to exit?")
             .setTitle("Network Failure")
             .setCancelable(false)
-            .setPositiveButton("Yes, Please",DialogInterface.OnClickListener { _, _ -> finish()})
-            .setNegativeButton("No, Thanks $spaces",DialogInterface.OnClickListener { dialog, _ -> dialog.cancel()})
+            .setPositiveButton("Yes, Please") { _, _ -> finish() }
+            .setNegativeButton("No, Thanks $spaces") { dialog, _ -> dialog.cancel() }
             .create()
             .show()
     }
@@ -143,8 +142,8 @@ class MainActivity : AppCompatActivity() {
             .setMessage("Data about currencies exchange rates are not available for now. Sorry for the inconvenience. Do you want to exit?")
             .setTitle("Data Unavailable")
             .setCancelable(false)
-            .setPositiveButton("Yes, Please",DialogInterface.OnClickListener { _, _ -> finish()})
-            .setNegativeButton("No, Thanks $spaces",DialogInterface.OnClickListener { dialog, _ -> dialog.cancel() })
+            .setPositiveButton("Yes, Please") { _, _ -> finish() }
+            .setNegativeButton("No, Thanks $spaces") { dialog, _ -> dialog.cancel() }
             .create()
             .show()
     }

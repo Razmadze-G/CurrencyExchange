@@ -15,8 +15,6 @@ import java.math.RoundingMode
 import java.text.DecimalFormat
 import java.util.*
 
-
-@Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity() {
     private val strURL: String= "https://nbg.gov.ge/gw/api/ct/monetarypolicy/currencies/ka/json"
 
@@ -76,6 +74,9 @@ class MainActivity : AppCompatActivity() {
 
         convertFrom.adapter = adapter
         convertTo.adapter = adapter
+
+        convertTo.setSelection(currencyCodes.keys.indexOf("GEL - ქართული ლარი"))
+        convertFrom.setSelection(currencyCodes.keys.indexOf("USD - აშშ დოლარი"))
     }
 
     private fun onConvert() {

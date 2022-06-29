@@ -8,4 +8,6 @@
     <string name="from_currency">From:</string>
     <string name="Enter">Enter amount</string>
     <string name="result_first_text">Result: </string>
+    <string name="exchange_button">exchange button</string>
+    <string name="changing_color_mode">changing application color mode</string>
 </resources>

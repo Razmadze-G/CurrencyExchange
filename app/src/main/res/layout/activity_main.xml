@@ -3,17 +3,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="20dp"
-        android:text="@string/currency_converter"
-        android:textSize="36sp" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="105dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="105dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/currency_converter"
+            android:textSize="34sp" />
+
+        <ImageButton
+            android:id="@+id/color_theme_change_button"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            app:srcCompat="@drawable/exchange_icon_dark"
+            android:background="?android:selectableItemBackground"
+            android:contentDescription="@string/changing_color_mode" />
+
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -56,13 +80,26 @@
                 android:layout_height="48dp"
                 android:layout_gravity="center"
                 android:contentDescription="@string/from_currency"
-                android:dropDownSelector="@color/card_view_dark_background" />
+                android:dropDownWidth="250dp"
+                android:dropDownVerticalOffset="48dp"
+                android:dropDownSelector="@color/card_view_dark_background"
+                android:spinnerMode="dropdown" />
         </RelativeLayout>
+
+        <ImageButton
+            android:id="@+id/switch_currency_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="120dp"
+            android:contentDescription="@string/exchange_button"
+            app:srcCompat="@drawable/exchange_icon"
+            android:background="?android:selectableItemBackground" />
 
         <TextView
             android:layout_width="68dp"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="20dp"
             android:text="@string/to_currency"
             android:textSize="15sp" />
 
@@ -80,6 +117,7 @@
                 android:layout_height="48dp"
                 android:layout_gravity="center"
                 android:contentDescription="@string/to_currency"
+                android:dropDownWidth="250dp"
                 android:dropDownSelector="@color/card_view_dark_background" />
         </RelativeLayout>
 
@@ -95,7 +133,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginBottom="20dp"
         android:enabled="false"
-        android:textColor="@color/success"
+        android:textColor="@color/primary_dark"
         android:textSize="25sp"
         android:textStyle="bold" />
 

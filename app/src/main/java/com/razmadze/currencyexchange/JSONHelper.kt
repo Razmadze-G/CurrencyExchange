@@ -1,5 +1,7 @@
 package com.razmadze.currencyexchange
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.util.Log
 import com.google.gson.Gson
 import com.google.gson.JsonSyntaxException

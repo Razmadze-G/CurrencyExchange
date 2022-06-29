@@ -3,7 +3,6 @@
     <color name="colorPrimary">#A3BCF9</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="success">#0AD812</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
@@ -15,4 +14,22 @@
     <color name="card_view_light_background">#FFFFFFFF</color>
     <color name="card_view_shadow_end_color">#03000000</color>
     <color name="card_view_shadow_start_color">#37000000</color>
+
+    <color name="primary1">#B8D8D8</color>
+    <color name="primary_dark1">#7A9E9F</color>
+    <color name="primary_light1">#4F6367</color>
+    <color name="accent1">#EEF5DB</color>
+    <color name="primary_text1">#BDBDBD</color>
+    <color name="secondary_text1">#FE5F55</color>
+    <color name="icons1">#212121</color>
+    <color name="divider1">#BDBDBD</color>
+
+    <color name="primary">#f6c170</color>
+    <color name="primary_dark">#689F38</color>
+    <color name="primary_light">#057a7c</color>
+    <color name="accent">#509c9f</color>
+    <color name="primary_text">#855764</color>
+    <color name="secondary_text">#a4543d</color>
+    <color name="icons">#49455b</color>
+    <color name="divider">#1c3a52</color>
 </resources>
